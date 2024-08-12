@@ -26,6 +26,8 @@ class TestApp:
             db.session.add(hello_from_liza)
             db.session.commit()
 
+         
+
             assert(hello_from_liza.body == "Hello 👋")
             assert(hello_from_liza.username == "Liza")
             assert(type(hello_from_liza.created_at) == datetime)
@@ -57,6 +59,8 @@ class TestApp:
 
             h = Message.query.filter_by(body="Hello 👋").first()
             assert(h)
+
+           
 
             db.session.delete(h)
             db.session.commit()
